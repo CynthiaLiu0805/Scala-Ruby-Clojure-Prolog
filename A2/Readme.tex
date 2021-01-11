@@ -1,0 +1,446 @@
+% Created 2020-11-26 Thu 20:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{unicode-math}
+\usepackage{unicode}
+\author{Cynthia Liu}
+\date{\today}
+\title{Computer Science 3MI3 – 2020 Assignment 2: Typing a λ-calculus}
+\hypersetup{
+ pdfauthor={Cynthia Liu},
+ pdftitle={Computer Science 3MI3 – 2020 Assignment 2: Typing a λ-calculus},
+ pdfkeywords={},
+ pdfsubject={Assignment 2 in Scala and Ruby implementation},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Introduction}
+\label{sec:org4a04684}
+This is the documentation for Assignment 2 for COMPSCI3MI3 2020fall. 
+
+It is about constructing representation of a simply-typed λ-calculus, 
+and a typechecker for that λ-calculus, as well as a type-erasure and a simple translator to simplify terms to untyped λ-calculus terms.
+
+This Assignment is written in both Scala and Ruby. 
+
+\section{Part one: The representation}
+\label{sec:org5c2a176}
+\subsection{Representation in Scala}
+\label{sec:org768944a}
+The terms of the λ-calculus ST are expressed in the new type \texttt{STTerm}.
+\begin{itemize}
+\item The constructor \texttt{STVar} take a parameter of type \texttt{Int}.
+\item The constructor \texttt{STZero}, \texttt{STTrue}, \texttt{STFalse} take no arguments, so they are implemented as case object
+\item The constructor \texttt{STSuc}, \texttt{STIsZero} take one parameters of type \texttt{STTerm}.
+\item The constructor \texttt{STApp} takes two parameters of type \texttt{STTerm}.
+\item The constructor \texttt{STAbs} takes two parameters, one is of type \texttt{STTerm}, the other is of type \texttt{STType}.
+\item The constructor \texttt{STTest} takes three parameters of type \texttt{STTerm}.
+\end{itemize}
+
+
+\begin{verbatim}
+sealed trait STTerm
+case class STVar(index: Int) extends STTerm
+case class STApp(t1: STTerm,t2: STTerm) extends STTerm
+case class STAbs(t: STType,term: STTerm) extends STTerm
+
+case object STZero extends STTerm
+case class STSuc(t: STTerm) extends STTerm
+case class STIsZero(t: STTerm) extends STTerm
+
+case object STTrue extends STTerm
+case object STFalse extends STTerm
+case class STTest(t1: STTerm,t2: STTerm,t3: STTerm) extends STTerm
+
+\end{verbatim}
+
+
+\subsection{Representation in Ruby}
+\label{sec:org5bd2398}
+In Ruby, all constructors are subtypes of type \texttt{STTerm}, that is, they all inherites from \texttt{STTerm}
+\begin{verbatim}
+class STTerm end
+\end{verbatim}
+
+The operator \texttt{<} means inheritance, for each class, we have an initialize method to initialize the object, and we have a == method to do comparsion.
+\begin{itemize}
+\item For \texttt{STVar}, it is initialized with an integer.
+\end{itemize}
+\begin{verbatim}
+class STVar < STTerm
+  attr_reader :index
+  # We require our variables are only indexed by integers.
+  def initialize(index)
+    unless index.is_a?(Integer) 
+      throw "Constructing a STVar out of non-integer terms"
+    end
+    @index = index
+  end
+  def ==(type); type.is_a?(STVat) && type.index==@index end
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STZero}, \texttt{STTrue}, \texttt{STFalse}, they are initialized directly.
+\end{itemize}
+\begin{verbatim}
+class STZero < STTerm
+  def ==(type); type.is_a?(STZero) end
+  def to_s; "zero" end
+  def typeOf(arr); STNat.new end
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STSuc}, \texttt{STIsZero}, they are initialized with a \texttt{STTerm}.
+\end{itemize}
+\begin{verbatim}
+class STSuc < STTerm
+    attr_reader :t
+    def initialize(t)
+      unless t.is_a?(STTerm)
+	throw "Constructing a lambda term out of non-lambda terms"
+      end
+      @t = t
+    end
+
+    def ==(type); type.is_a?(STSuc) && type.t==@t end
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STApp}, it is initialized with two \texttt{STTerm}.
+\end{itemize}
+\begin{verbatim}
+class STApp < STTerm
+    attr_reader :t1
+    attr_reader :t2
+    def initialize(t1,t2)
+      unless t1.is_a?(STTerm) && t2.is_a?(STTerm)
+	throw "Constructing a lambda term out of non-lambda terms"
+      end
+      @t1 = t1; @t2 = t2
+    end
+    def ==(type); type.is_a?(STApp) && type.t1==@t1 && type.t2==@t2 end
+  end  
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STAbs}, it is initialized with a \texttt{STTerm} and a \texttt{STType}.
+\end{itemize}
+\begin{verbatim}
+class STAbs < STTerm
+    attr_reader :t1
+    attr_reader :t2
+    def initialize(t1,t2)
+      unless t1.is_a?(STType) && t2.is_a?(STTerm)
+	throw "Constructing a lambda term out of non-lambda terms"
+      end
+      @t1 = t1; @t2 = t2
+    end
+
+    def ==(type); type.is_a?(STAbs) && type.t1==@t1 && type.t2==@t2 end
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STTest}, it is initialized with three \texttt{STTerm}.
+\end{itemize}
+\begin{verbatim}
+class STTest < STTerm
+   attr_reader :t1
+   attr_reader :t2
+   attr_reader :t3
+
+   # We require our variables are only indexed by integers.
+   def initialize(t1,t2,t3)
+     unless t1.is_a?(STTerm) && t2.is_a?(STTerm) && t2.is_a?(STTerm)
+       throw "Constructing a lambda term out of non-lambda terms"
+     end
+     @t1 = t1; @t2 = t2; @t3=t3
+   end
+
+   def ==(type); type.is_a?(STTest) && type.t1==@t1 && type.t2==@t2 && type.t3==@t3 end
+ end
+\end{verbatim}
+
+
+\section{Part two: Typechecking}
+\label{sec:org75fe152}
+This method takes a \texttt{STTerm}, and returns true if the represented term obeys the type rules of ST; 
+otherwise, it returns false.
+
+\subsection{Scala implementation}
+\label{sec:org94eedd4}
+\subsubsection{typeOf}
+\label{sec:org80efad3}
+This method determine a type for the input \texttt{STTerm}. 
+It has two arguments, one is the \texttt{STTerm}, the other one is an typing context, here an empty list is used.
+It return a \texttt{Option[STType]}.
+
+\begin{itemize}
+\item Acccording to the typing rule, for \texttt{STVar}, the type is given by the environment
+\end{itemize}
+\begin{verbatim}
+case STVar(index) => None                                                                                                                                                                                                                                             
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STTrue}, \texttt{STFalse}, the type is \texttt{STBool}
+\end{itemize}
+\begin{verbatim}
+case STTrue | STFalse => Some(STBool)
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STIsZero}, if the type of its parameter t is \texttt{STNat}, then the type of \texttt{STBool}
+\end{itemize}
+\begin{verbatim}
+case STIsZero(t) => if (typeOf(t,List[STType]())==Some(STNat)) Some(STBool) else None
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STZero}, the type is \texttt{STNat}
+\item For \texttt{STSuc}, if the type of its parameter t is \texttt{STNat}, then the type is \texttt{STNat}
+\end{itemize}
+\begin{verbatim}
+case STZero => Some(STNat)
+case STSuc(t) => if (typeOf(t,List[STType]())==Some(STNat)) Some(STNat) else None
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STAbs}, we add the type to the list(environment) first, if the index(index parameter of the \texttt{STVar}) at the list is of type t, return A -> A.
+
+If it is a free variable, return None. If it is not a \texttt{STVar}, use recursion to find the type of the term
+\end{itemize}
+\begin{verbatim}
+case STAbs(t,term) => 
+  term match {    
+    case STVar(index) if ((l:+(t)).length < index) => print((t::l).length< index); None
+    case STVar(index) if (((l:+(t)).lift(index).get)==t) => Some(STFun(t,STNat))
+    case STApp(t1, t2) => ((l:+(t)).lift(0).get) match {case STFun(dom,codom) if (dom==t) => print(t); Some(STNat)
+    case _ => Some(STFun(t,typeOf(term,l:+(t)).get))
+  }
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STApp}, we add the type of t1 to the list and get the first element of the list.
+
+If it is of type A -> B, check if type1 is the same as type of t2, if so, the general type is type2, if not, return None.
+\end{itemize}
+\begin{verbatim}
+case STApp(t1, t2) => (typeOf(t1,List[STType]())::l)(0) match {
+    case Some(STFun(type1,type2)) if Some(type1)==typeOf(t2,List[STType]()) => print((typeOf(t1,List[STType]())::l)(0));print(type2);Some(type2)
+    case _ => None 
+  } 
+\end{verbatim}
+
+
+\subsubsection{typecheck}
+\label{sec:org06f907c}
+This method takes an \texttt{STTerm}, and returns \texttt{true} if the represented term obeys the type rules of ST; 
+otherwise, it returns false.
+
+The \texttt{typeOf} method is called in this method, if it return some type, the result is true, else it is false. 
+Also, if exception occurs, it is false
+\begin{verbatim}
+def typecheck(input:STTerm):Boolean= try {
+  if (typeOf(input, List[STType]())==None) {
+    return false
+  }
+  else {
+    return true
+  }
+}
+  catch {
+      case _: Throwable => false
+  }
+\end{verbatim}
+
+
+\subsection{Ruby implementation}
+\label{sec:org21db10b}
+\subsubsection{typeOf}
+\label{sec:org5bd96e5}
+This method determine a type for the input \texttt{STTerm}. 
+As it is implemented in each class, an empty environment is passed as argument. Here, an empty array is used.
+
+\begin{itemize}
+\item For \texttt{STVar}, the type is given by the environment
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr); nil end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STTrue}, \texttt{STFalse}, the type is \texttt{STBool}
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr); STBool.new end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STIsZero}, if the type of its parameter t is \texttt{STNat}, then the type of \texttt{STBool}
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr)
+      if t.typeOf(Array.new)==STNat.new
+	return STBool.new
+      else 
+	return nil
+      end  
+    end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STZero}, the type is \texttt{STNat}
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr); STNat.new end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STAbs}, if t2 is of type \texttt{STVar}, we add the type to the list(environment) first, and the index(index parameter of the \texttt{STVar}) at the list is of type t1, return A -> A.
+
+If it is a free variable, return None. If it is not a \texttt{STVar}, use recursion to find the type of the term
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr)
+  case t2
+  when STVar
+    if (arr<<t1)[t2.index]==t1
+      return STFun.new(t1,STNat.new)
+    else 
+      return nil
+    end
+  when STApp
+    if (arr<<t1)[0].dom == t1
+      return STNat.new
+    end
+  else 
+    return STFun.new(t1,t2.typeOf(arr<<t1))
+  end
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STApp}, we check the type of t1, if it is \texttt{STFun}, we then check if its dom is the same as the type of t2.
+
+If so, return its condom, else, return nil
+\end{itemize}
+\begin{verbatim}
+def typeOf(arr)
+      case t1.typeOf(Array.new)
+      when STFun
+	if t1.typeOf(Array.new).dom == t2.typeOf(Array.new)
+	  return t1.typeOf(Array.new).codom
+	else
+	  return nil
+	end
+      else 
+	return nil
+      end
+    end
+\end{verbatim}
+
+
+\subsubsection{typecheck}
+\label{sec:orgb829cfc}
+This method takes an \texttt{STTerm}, and returns \texttt{true} if the represented term obeys the type rules of ST; 
+otherwise, it returns false.
+
+The \texttt{typeOf} method is called in this method, if it return some type, the result is true, else it is false. 
+Also, as this method applies to all class, it is defined in the super class STTerm
+\begin{verbatim}
+class STTerm 
+  def typecheck
+    if typeOf(Array.new)==nil
+      return false
+    else
+      return true
+    end
+  end
+end
+\end{verbatim}
+
+
+\section{Part three: Translation to the untyped λ-calculus}
+\label{sec:org51cb0eb}
+This method translates a STTerm into elements of ULTerm.
+
+\subsection{Scala implementation}
+\label{sec:org621452c}
+\begin{itemize}
+\item For \texttt{STVar}, \texttt{STTrue}, \texttt{STFalse}, \texttt{STZero} they are translated directly
+\end{itemize}
+\begin{verbatim}
+case STVar(index) => ULVar(index)
+case STTrue => ULAbs(ULAbs(ULVar(1)))
+case STFalse => ULAbs(ULAbs(ULVar(0)))
+case STZero => ULAbs(ULAbs(ULVar(0)))
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STSuc(t)}, the \texttt{Suc} part is default, and \texttt{ULApp} is used to combine it with t in untyped lambda form.
+\end{itemize}
+\begin{verbatim}
+case STSuc(t) => ULApp(ULAbs(ULAbs(ULAbs(ULApp(ULVar(1),ULApp(ULApp(ULVar(2),ULVar(1)),ULVar(0)))))),eraseTypes(t))
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STApp} and \texttt{STAbs}, they are translated using recursion
+\end{itemize}
+\begin{verbatim}
+case STApp(t1, t2) => ULApp(eraseTypes(t1),eraseTypes(t2))
+case STAbs(t, term) => ULAbs(eraseTypes(term))
+\end{verbatim}
+
+
+\subsection{Ruby implementation}
+\label{sec:org5358304}
+\begin{itemize}
+\item For \texttt{STVar}, \texttt{STTrue}, \texttt{STFalse}, \texttt{STZero} they are translated directly
+\end{itemize}
+\begin{verbatim}
+def eraseTypes; ULVar.new(index) end
+def eraseTypes; ULAbs.new(ULAbs.new(ULVar.new(1))) end
+def eraseTypes; ULAbs.new(ULAbs.new(ULVar.new(0))) end
+def eraseTypes; ULAbs.new(ULAbs.new(ULVar.new(0))) end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STSuc(t)}, the \texttt{Suc} part is default, and \texttt{ULApp} is used to combine it with t in untyped lambda form.
+\end{itemize}
+\begin{verbatim}
+def eraseTypes
+    return ULApp.new(ULAbs.new(ULAbs.new(ULAbs.new(ULApp.new(
+      ULVar.new(1),ULApp.new(ULApp.new(ULVar.new(2),ULVar.new(1)),ULVar.new(0)))))),t.eraseTypes) 
+end
+\end{verbatim}
+
+\begin{itemize}
+\item For \texttt{STApp} and \texttt{STAbs}, they are translated using recursion
+\end{itemize}
+\begin{verbatim}
+def eraseTypes; ULApp.new(t1.eraseTypes,t2.eraseTypes) end
+def eraseTypes; ULAbs.new(t2.eraseTypes) end
+\end{verbatim}
+\end{document}

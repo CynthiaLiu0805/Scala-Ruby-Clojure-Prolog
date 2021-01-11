@@ -1,0 +1,715 @@
+2020.11.07 10:30:07 INFO  started: Metals version 0.9.3+82-189ba64a-SNAPSHOT in workspace '/Users/liuyingxue/Documents/work/3MI3/h7' for client vscode.
+2020.11.07 10:30:10 INFO  time: initialize in 2.82s
+2020.11.07 10:30:11 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 10:30:16 INFO  no build target: using presentation compiler with only scala-library
+2020.11.07 10:30:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:30:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:32:57 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7t.sc
+2020.11.07 10:33:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7t.sc
+java.lang.NullPointerException
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3(Ammonite.scala:207)
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3$adapted(Ammonite.scala:204)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+2020.11.07 10:57:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:57:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:57:46 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:57:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:57:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:58:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 10:58:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 11:00:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 11:00:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 11:00:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 11:00:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 11:00:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:16:52 INFO  shutting down Metals
+2020.11.07 14:20:50 INFO  started: Metals version 0.9.3+82-189ba64a-SNAPSHOT in workspace '/Users/liuyingxue/Documents/work/3MI3/h7' for client vscode.
+2020.11.07 14:20:56 INFO  time: initialize in 5.92s
+2020.11.07 14:20:58 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 14:21:08 INFO  no build target: using presentation compiler with only scala-library
+2020.11.07 14:21:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:21:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7t.sc
+java.lang.NullPointerException
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3(Ammonite.scala:207)
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3$adapted(Ammonite.scala:204)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+2020.11.07 14:28:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:28:29 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:32:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:43:47 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 14:43:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:43:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:43:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:43:55 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 14:43:55 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 14:43:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:00 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 14:44:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 2:44:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 207
+2020.11.07 14:44:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:13:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:14:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:15:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:15:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:15:28 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:15:28 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:22:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:22:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:22:52 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:22:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:23:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:24:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:00 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:25:53 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:11 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:26:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:27:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:28:40 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:28:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:29:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 3:29:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 803
+2020.11.07 15:29:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:29:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:30:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:30:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:30:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:30:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 3:30:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 890
+Nov 07, 2020 3:30:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 893
+2020.11.07 15:30:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 3:37:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 926
+2020.11.07 15:37:34 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:37:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:53 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:38:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:39:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:39:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:39:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:39:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:39:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:29 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:57 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:49:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:50:07 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:50:07 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:50:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:52:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:54:12 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:54:13 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 15:54:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 15:54:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:07:23 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:07:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:07:30 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:07:32 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:07:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:07:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:07:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 4:07:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.11.07 16:08:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:08:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:08:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:08:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:08:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:31:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:20 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:47:20 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:47:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:22 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:47:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 4:47:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1572
+2020.11.07 16:47:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:47:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:53:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:53:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:53:30 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:57:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:57:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:57:59 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 16:58:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:58:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:58:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:58:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:58:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:59:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:59:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:59:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 16:59:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:44:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:44:46 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:45:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:45:11 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:52:17 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 19:52:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:29 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 19:53:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 20:52:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 20:52:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 20:53:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 20:53:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 21:53:17 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 21:53:17 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 21:53:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 21:53:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:29:34 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:29:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:29:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:29:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:29:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 10:30:24 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: offset 422, count -2, length 5372
+java.lang.StringIndexOutOfBoundsException: offset 422, count -2, length 5372
+	at java.base/java.lang.String.checkBoundsOffCount(String.java:3705)
+	at java.base/java.lang.String.rangeCheck(String.java:296)
+	at java.base/java.lang.String.<init>(String.java:292)
+	at scala.tools.nsc.interactive.Global.typeCompletions$1(Global.scala:1230)
+	at scala.tools.nsc.interactive.Global.completionsAt(Global.scala:1253)
+	at scala.meta.internal.pc.SignatureHelpProvider.$anonfun$treeSymbol$1(SignatureHelpProvider.scala:376)
+	at scala.Option.map(Option.scala:230)
+	at scala.meta.internal.pc.SignatureHelpProvider.treeSymbol(SignatureHelpProvider.scala:374)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCall$.unapply(SignatureHelpProvider.scala:199)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.visit(SignatureHelpProvider.scala:310)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.traverse(SignatureHelpProvider.scala:304)
+	at scala.meta.internal.pc.SignatureHelpProvider$MethodCallTraverser.fromTree(SignatureHelpProvider.scala:273)
+	at scala.meta.internal.pc.SignatureHelpProvider.signatureHelp(SignatureHelpProvider.scala:27)
+
+2020.11.07 22:30:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:29 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:30:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:00 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:31:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:32:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:33:00 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:33:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:33:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:33 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:46 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:34:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:43:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:43:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:44:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:31 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:52 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:45:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:11 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:31 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:52 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:46:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:46 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:47:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:51:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:51:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:51:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:52:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:52:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:52:31 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:52:33 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:53:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:53:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:53:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 10:54:26 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+2020.11.07 22:54:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:34 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:54:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 10:54:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3334
+2020.11.07 22:54:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:55:22 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 22:55:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:55:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:11 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:53 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:56:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 10:57:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3465
+2020.11.07 22:57:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:57:30 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 22:58:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:09:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:09:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:09:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:09:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:10:52 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:11:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:13:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:13:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:13:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:13:02 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:13:04 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:13:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:13:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:13:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:13:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:13:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:15:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 11:15:13 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+Nov 07, 2020 11:15:14 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+Nov 07, 2020 11:15:14 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+Nov 07, 2020 11:15:14 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+Nov 07, 2020 11:15:14 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+Nov 07, 2020 11:15:14 PM scala.meta.internal.pc.completions.Completions completionPosition
+SEVERE: null
+java.lang.NullPointerException
+	at scala.meta.internal.pc.completions.OverrideCompletions$OverrideCompletion.<init>(OverrideCompletions.scala:46)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe(Completions.scala:500)
+	at scala.meta.internal.pc.completions.Completions.completionPositionUnsafe$(Completions.scala:409)
+	at scala.meta.internal.pc.MetalsGlobal.completionPositionUnsafe(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.completions.Completions.completionPosition(Completions.scala:401)
+	at scala.meta.internal.pc.completions.Completions.completionPosition$(Completions.scala:386)
+	at scala.meta.internal.pc.MetalsGlobal.completionPosition(MetalsGlobal.scala:29)
+	at scala.meta.internal.pc.CompletionProvider.safeCompletionsAt(CompletionProvider.scala:444)
+	at scala.meta.internal.pc.CompletionProvider.completions(CompletionProvider.scala:57)
+	at scala.meta.internal.pc.ScalaPresentationCompiler.$anonfun$complete$1(ScalaPresentationCompiler.scala:184)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:137)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$withInterruptableCompiler$1(CompilerAccess.scala:87)
+	at scala.meta.internal.pc.CompilerAccess.$anonfun$onCompilerJobQueue$1(CompilerAccess.scala:197)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:103)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+2020.11.07 23:15:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:15:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:15:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:15:49 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:15:49 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:15:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:16:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:16:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:16:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:32:42 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:32:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:33:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:34:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:35:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:37:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:45:48 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:45:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:45:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:45:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:45:57 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:27 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.07 23:46:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 07, 2020 11:46:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4050
+2020.11.07 23:46:53 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:46:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:47:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:47:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:47:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:47:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:48:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:48:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:49:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:49:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:49:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:49:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:49:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:50:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:50:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:51:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:52:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:52:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.07 23:53:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:24:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:24:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:25:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:26:00 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:26:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:34:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:34:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:34:46 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:34:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 08, 2020 12:34:48 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 08, 2020 12:34:48 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+Nov 08, 2020 12:34:49 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 08, 2020 12:34:49 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+2020.11.08 00:34:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:35:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 08, 2020 12:36:53 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 08, 2020 12:36:53 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+2020.11.08 00:36:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:06 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 08, 2020 12:37:11 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4768
+2020.11.08 00:37:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:34 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:37:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:38:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:38:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:38:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:38:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:38:29 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 08, 2020 12:38:31 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Nov 08, 2020 12:38:31 AM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: null
+java.lang.NullPointerException
+	at scala.reflect.internal.Definitions$DefinitionsClass.isByNameParamType(Definitions.scala:417)
+	at scala.reflect.internal.TreeInfo.isStableIdent(TreeInfo.scala:138)
+	at scala.reflect.internal.TreeInfo.isStableIdentifier(TreeInfo.scala:113)
+	at scala.reflect.internal.TreeInfo.isPath(TreeInfo.scala:102)
+	at scala.reflect.internal.TreeInfo.admitsTypeSelection(TreeInfo.scala:156)
+	at scala.tools.nsc.interactive.Global.stabilizedType(Global.scala:959)
+	at scala.tools.nsc.interactive.Global.typedTreeAt(Global.scala:807)
+	at scala.meta.internal.pc.HoverProvider.typedHoverTreeAt(HoverProvider.scala:239)
+	at scala.meta.internal.pc.HoverProvider.hover(HoverProvider.scala:26)
+
+2020.11.08 00:38:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:39:02 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:41:17 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:44:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:44:08 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:44:08 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:44:08 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:53:59 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:54:34 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:55:27 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:58:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:58:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 00:59:58 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.11.08 00:59:58 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/h7'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Nov 08, 2020 2:00:47 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+Nov 08, 2020 2:01:07 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.11.08 14:44:40 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:44:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+Nov 08, 2020 2:44:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5109
+2020.11.08 14:44:45 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:44:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:49:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:49:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:50:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:50:30 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:50:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:52:32 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:52:36 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:52:40 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:52:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:54:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:54:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:54:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:54:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7t.sc
+java.lang.NullPointerException
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3(Ammonite.scala:207)
+	at scala.meta.internal.metals.ammonite.Ammonite.$anonfun$maybeImport$3$adapted(Ammonite.scala:204)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+2020.11.08 14:54:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:54:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:55:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:58:53 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:58:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:58:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:58:59 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:10 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:13 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:31 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 14:59:58 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:00:01 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:00:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:00:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:00:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:00:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/h7/h7.sc
+2020.11.08 15:02:15 INFO  shutting down Metals

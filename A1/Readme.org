@@ -1,0 +1,334 @@
+#+Title: Computer Science 3MI3 – 2020 Assignment 1: A language of expressions
+#+Author: Cynthia Liu
+#+Description: Assignment 1 in Scala and Prolog implementation
+#+SETUPFILE: ../../org-html-themes/setup/theme-readtheorg-local.setup
+
+* LaTeX settings                                                   :noexport:
+
+#+LaTeX_header: \usepackage{unicode-math}
+#+LaTeX_header: \usepackage{unicode}
+
+
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: Introduction
+:END:
+
+This is the documentation for Assignment 1 for COMPSCI3MI3 2020fall. 
+
+It is about an expression language consisting of integer constants and seven prefix operators, 
+like negation, absolute value, plus, times, minus, and exponent. 
+
+Also, base on that, implementing variables and substitution, as well as boolean expressions.
+
+This Assignment is written in both Scala and Prolog. 
+
+* Part one: Interpreter written in Scala
+:PROPERTIES:
+:CUSTOM_ID: Part one: Interpreter written in Scala
+:END:
+
+** Representation
+:PROPERTIES:
+:CUSTOM_ID: Representation
+:END:
+The integer constants and operators are expressed in the new type ~Expr~.
+- The constructor ~Const~ take a parameter of type ~Int~.
+- The constructor ~Neg~ and ~Abs~ take a parameter of type ~Expr~.
+- The constructor ~Minus~, ~Plus~, ~Times~ and ~Exp~ take two parameters of type ~Expr~.
+#+begin_src amm
+sealed trait Expr
+case class Const[A](value:Int) extends Expr
+case class Neg[A](value:Expr) extends Expr
+case class Abs[A](value:Expr) extends Expr
+case class Minus[A](value1:Expr, value2:Expr) extends Expr
+case class Plus[A](Tvalue1:Expr, value2:Expr) extends Expr
+case class Times[A](value1:Expr, value2:Expr) extends Expr
+case class Exp[A](value1:Expr, value2:Expr) extends Expr
+#+end_src
+
+** Interpreter
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: Interpreter
+:END:   
+The ~interpreterExpr~ method calculates the value of an ~Expr~.
+- If the input is a Const, the value of Const is returned directly.
+- Else, take the value of ~Expr~ into recursion and perform the math operation on result of recursion.
+#+begin_src amm
+def interpretExpr(value:Expr):Int = value match{
+    case Const(value) => value
+    case Abs(value) => interpretExpr(value).abs
+    case Minus(value1, value2) => interpretExpr(value1)-interpretExpr(value2)
+    case Neg(value) => interpretExpr(value)*(-1)
+    case Plus(value1, value2) => interpretExpr(value2)+interpretExpr(value1)
+    case Times(value1, value2) => interpretExpr(value1)*interpretExpr(value2)
+    case Exp(value1, value2) => Math.pow(interpretExpr(value1),interpretExpr(value2)).toInt
+}
+#+end_src 
+* Part two: Interpreter written in Prolog
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: Part two: Interpreter written in Prolog
+:END:   
+
+** Expression recongniser
+:PROPERTIES:                     
+:CUSTOM_ID: Expression recongniser
+:END: 
+The predicate ~isExpr~ recongnises expression as: 
+#+begin_src prolog
+isExpr(constE(A)).
+isExpr(plusE(A,B)).
+#+end_src
+
+** Interpreter
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: Interpreter
+:END: 
+The ~interpretExpr~ predicate relates the expression to their numerical values.
+
+Similarly to the one in Scala, if the expression is ~constE(A)~, the value A is returned directly.
+
+Else, take the value into another ~interpretExpr~ predicate again and apply the math operation to the result of the recursion.
+#+begin_src amm
+interpretExpr(constE(A),X) :- X is A.
+interpretExpr(absE(A),X) :- interpretExpr(A,X1),X is abs(X1).
+interpretExpr(plusE(A,B),X) :- interpretExpr(A,X1),interpretExpr(B,X2), X is X1+X2.
+#+end_src
+
+* Part three: Variables and substitution
+:PROPERTIES:
+:CUSTOM_ID: Part three: Variables and substitution
+:END:
+
+** Scala implementation
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: Scala implementation
+:END:
+
+*** VarExpr
+:PROPERTIES:
+:CUSTOM_ID: VarExpr
+:END:
+The new algebraic datatype ~VarExpr~ includes the constructors from ~Expr~ with two new constructors ~Var~ and ~Subst~.
+
+For ~Subst~, the first parameter is the expression to perform the substitution on, usually include the ~Var~ constructor.
+The second parameter is the variable to be substituted, here represented by Symbol type.
+The third parameter the expression to substitute for the variable.
+
+#+begin_src scala                                                                                                                               
+case class Var[A](value:Symbol) extends VarExpr
+case class Subst[A](value1:VarExpr, value2:A, value3:VarExpr) extends VarExpr                                                                                                                                                                                                                                                              
+#+end_src  
+
+*** interpretVarExpr
+:PROPERTIES:
+:CUSTOM_ID: interpretVarExpr
+:END:
+The ~interpretVarExpr~ method is similar to the interpretExpr method. 
+Besides the case of ~Subst~, other cases are basically same as the one in ~interpretExpr~.
+For ~Subst~, a helper method ~subhelp~ is used to do the substitution:
+#+begin_src scala                                                                                                                                       
+case Subst(value1, value2, value3) => interpretVarExpr(subhelp(value1, value2,value3))                                                                                                                                                  
+#+end_src 
+Where value1, value2, value3 are the three parameters of ~Subst~.
+
+**** helper method: subhelp
+:PROPERTIES:
+:CUSTOME_ID: subhelp
+:END:
+The ~subhelp~ method subtitutes the variable into the expression. ie. if the input is 
+#+begin_src scala
+Subst(Subst(Plus(Var('x),Var('y)),'x,Const(5)),'y,Const(4))
+#+end_src 
+then the output would be
+#+begin_Src scala
+Plus(Const(5),Const(4))
+#+end_src
+
+In the ~subhelp~ method, for those with only one argument like ~Var~, ~Abs~, ~Neg~, take the expression to be substituted to the ~VarExpr~.
+#+begin_src scala
+case Var(value) => value_out
+case Abs(value) => Abs(value_out)
+case Neg(value) => Neg(value_out)
+#+end_src
+Where ~value_out~ is the expression to substitute for the variable.
+
+However, for those with two arguments, we need to compared which variable to be substituted into, 
+that is, compare the ~Var~ and the ~Symbol~ by converting them to String. The ~getSymbol~ method return ~Symbol~ in String form.
+A case for ~Plus~ is shown below:
+#+begin_src scala
+case Plus(value_first, value_second) if (s_out.toString==getSymbol(value_first)) => Plus(value_out,value_second)
+case Plus(value_first, value_second) if (s_out.toString==getSymbol(value_second)) => Plus(value_first,value_out)
+#+end_src
+
+For recursion,do the inner recursion first and then the outer one.
+#+begin_src scala
+case Subst(value_inner,s2,value_inner2) => subhelp(subhelp(value_inner,s2,value_inner2),s_out,value_out)
+#+end_src 
+
+
+** Prolog implementation
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: Prolog implementation
+:END:
+ 
+*** isVarExpr 
+:PROPERTIES:
+:CUSTOM_ID: isVarExpr
+:END:
+
+The predicate ~isVarExpr~ recongnises expression as: 
+#+begin_src prolog
+isVarExpr(constE(A)).
+isVarExpr(plusE(A,B)).
+isVarExpr(var(A)).
+isVarExpr(subst(A,B,C)).
+#+end_src
+
+*** interpretVarExpr
+:PROPERTIES:  
+:CUSTOM_ID: interpretVarExpr
+:END:
+The ~interpretVarExpr~ predicate is similar to the ~interpretExpr~, for usual math operation, they are basically the same.
+When there is substitution, use the helper predicate to simplify the substitution, then put the result into interpretVarExpr predicate
+#+begin_src prolog
+interpretVarExpr(subst(A,B,C),X) :- subhelp(A,B,C,R), interpretVarExpr(R,X).
+#+end_src
+Here, ~A~, ~B~, ~C~ are the expression to perform the substitution on, the variable to be substituted, the expression to substitute for the variable.
+
+
+**** helper predicate subhelp
+:PROPERTIES:
+:CUSTOM_ID: prolog subhelp
+:END:
+
+The ~subhelp~ predicate subtitutes the variable into the expression. ie. if the input is 
+#+begin_src prolog
+subst(subst(plusE(var(x),var(y)),x,constE(5)), y,constE(4))
+#+end_src
+Then the output would be:
+#+begin_src prolog   
+plusE(constE(5),constE(4))
+#+end_src
+
+In the ~subhelp~ predicate, for ~Var~, ~Abs~, ~Neg~, take the expression to be substituted into the ~VarExpr~.
+#+begin_src prolog
+subhelp(var(A),A,C,R) :- R=C.
+subhelp(absE(A),C,D,R) :- R=absE(D).
+subhelp(negE(A),C,D,R) :- R=negE(D).
+#+end_src
+Where ~D~ is the expression to substitute for the variable.
+
+For those with two arguments, comparsion is needed:
+#+begin_src prolog
+subhelp(plusE(A,B),C,D,R) :- A==var(C) -> R = plusE(D,B).
+subhelp(plusE(A,B),C,D,R) :- B==var(C) -> R = plusE(A,D).
+#+end_src
+
+For recursion, do the inner recursion and then the outer recursion.
+#+begin_src prolog                                                                                                                                
+subhelp(subst(A1,A2,A3),B,C,R) :- subhelp(A1,A2,A3,R1),subhelp(R1,B,C,R).
+#+end_src                                                                                                                                         
+
+* Part four
+:PROPERTIES:
+:CUSTOM_ID: Part four: Boolean expressions	
+:END:
+
+** Scala implementation
+:PROPERTIES:                    
+:CUSTOM_ID: Scala implementation
+:END:
+
+*** MixedExpr
+:PROPERTIES:
+:CUSTOM_ID: MixedExpr
+:END:
+The new algebraic datatype ~MixedExpr~ includes the constructors from ~Expr~ with new constructors ~TT~ , ~FF~, ~Band~, ~Bor~, ~Bnot~.
+
+~TT~ and ~FF~ take no arguments, so they are implemented as case object, and the other three constructors take ~MixedExpr~ as argument.
+
+#+begin_src scala        
+case object TT extends MixedExpr
+case object FF extends MixedExpr
+case class Band[A](value1:MixedExpr, value2:MixedExpr) extends MixedExpr
+case class Bnot[A](value:MixedExpr) extends MixedExpr
+case class Bor[A](value1:MixedExpr, value2:MixedExpr) extends MixedExpr                                                                                                                       
+#+end_src  
+
+*** interpretMixedExpr
+:PROPERTIES:
+:CUSTOM_ID: interpretMixedExpr
+:END:
+The return type of ~interpretMixedExpr~ method is ~Option[Either[Int, Boolean]]~.
+In this case, when the method return ~Int~, a ~Some(Left())~ need to be added on the result like ~Some(Left(result))~.
+When the method return ~Boolean~, a ~Some(Right())~ need to be added on the result like ~Some(Right(result))~.
+In order to calculate these two different type separately, helper functions ~interpreterExpr~ and ~interpretBoolean~ is used in ~interpretMixedExpr~.
+Also, when the input is ~TT~ or ~FF~, ~true~ or ~false~ is returned directly.
+#+begin_src scala                                                                                                                                       
+case Abs(value) => Some(Left(interpretExpr(Abs(value))))
+case TT => Some(Right(true))
+case FF => Some(Right(false))
+case Band(value1, value2) => Some(Right(interpretBoolean(Band(value1,value2))))
+#+end_src 
+
+**** interpretExpr and interpretBoolean
+:PROPERTIES:
+:CUSTOM_ID: helper methods for part 4
+:END:
+
+The ~interpretExpr~ method is the same as the one in part one, 
+and the ~interpretBoolean~ is implemented using recursion and logical operators.
+#+begin_src scala                                                                                                                                       
+def interpretBoolean(value:MixedExpr):Boolean = value match {
+    case TT => true
+    case FF => false
+    case Band(value1, value2) => interpretBoolean(value1) && interpretBoolean(value2)
+    case Bnot(value) => !interpretBoolean(value)
+    case Bor(value1, value2) => interpretBoolean(value1) || interpretBoolean(value2)
+}
+#+end_src 
+
+** Prolog implementation
+:PROPERTIES:
+:CUSTOM_ID: Prolog implementation
+:END:    
+
+*** isMixedExpr 
+:PROPERTIES:
+:CUSTOM_ID: isMixedExpr 
+:END:
+
+The predicate ~isMixedExpr ~ recongnises expression as: 
+#+begin_src prolog
+isMixedExpr(constE(A)).
+isMixedExpr(plusE(A,B)).
+isMixedExpr(tt).
+isMixedExpr(ff).
+isMixedExpr(band(A,B)).
+isMixedExpr(bor(A,B)).
+isMixedExpr(bnot(A,B)).
+#+end_src
+
+
+*** interpretVarExpr
+:PROPERTIES:  
+:CUSTOM_ID: interpretVarExpr
+:END:
+The ~interpretMixedExpr~ predicate is similar to the ~interpretExpr~, for usual math operation, they are basically the same.
+For the new expressions ~tt~ and ~ff~, ~true~ and ~false~ is return directly
+#+begin_src prolog
+interpretMixedExpr(tt,X) :- X = true.
+interpretMixedExpr(ff,X) :- X = false.
+#+end_src
+For the other three cases, again, recursion is needed.
+For example, for ~bnot(A)~, we need to do ~interpretMixedExpr(A,Y)~ and then return ~X~ according to ~Y~.
+#+begin_src prolog
+interpretMixedExpr(bnot(A),X) :- interpretMixedExpr(A,Y), Y==true -> X = false.
+interpretMixedExpr(bnot(A),X) :- interpretMixedExpr(A,Y), Y==false -> X = true.
+#+end_src
+
+Similarly, for the other two cases, we can use logical operator such as ~;~.
+#+begin_src prolog
+interpretMixedExpr(bor(A,B),X) :- interpretMixedExpr(A,Y1), interpretMixedExpr(B,Y2) -> X = Y1;Y2 .
+#+end_src

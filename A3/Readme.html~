@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-12-22 Tue 04:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Computer Science 3MI3 – 2020 Assignment 3: A representation of Dijkstra's guarded command language</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Cynthia Liu" />
+<meta name="description" content="Assignment 3 in Clojure and Ruby implementation"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Computer Science 3MI3 – 2020 Assignment 3: A representation of Dijkstra's guarded command language</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#Introduction">1. Introduction</a></li>
+<li><a href="#Part one: Representations of GCL and GCLe">2. Part one: Representations of GCL and GCLe</a>
+<ul>
+<li><a href="#Representation in Ruby">2.1. Representation in Ruby</a></li>
+<li><a href="#Representation in Clojure">2.2. Representation in Clojure</a></li>
+</ul>
+</li>
+<li><a href="#Part two: stack machine">3. Part two: Stack machine</a>
+<ul>
+<li><a href="#emptyState">3.1. emptyState</a></li>
+<li><a href="#updateState">3.2. updateState</a></li>
+<li><a href="#stackEval">3.3. stackEval</a></li>
+</ul>
+</li>
+<li><a href="#Part three: The small-step semantics of GCL in Clojure">4. Part three: The small-step semantics of GCL in Clojure</a>
+<ul>
+<li><a href="#emptyState">4.1. emptyState</a></li>
+<li><a href="#updateState">4.2. updateState</a></li>
+<li><a href="#reduce_helper">4.3. reduce<sub>helper</sub></a></li>
+<li><a href="#reduce">4.4. reduce</a></li>
+</ul>
+</li>
+<li><a href="#Part four: The big-step semantics of GCLe in Ruby">5. Part four: The big-step semantics of GCLe in Ruby</a>
+<ul>
+<li><a href="#wellScoped">5.1. wellScoped</a></li>
+<li><a href="#eval">5.2. eval</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga308b37" class="outline-2">
+<h2 id="Introduction"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-Introduction">
+<p>
+This is the documentation for Assignment 3 for COMPSCI3MI3 2020fall. 
+It is about representing Dijkstra's “guarded command language”, which we call GCL, 
+and a small extension to it, GCLe, which adds a notion of scope.
+</p>
+
+<p>
+This Assignment is written in both Clojure and Ruby, and it defines a stack machine in Ruby,
+ a The small-step semantics of GCL in Clojure, and a big-step semantics of GCLe in Ruby
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga15ccc7" class="outline-2">
+<h2 id="Part one: Representations of GCL and GCLe"><span class="section-number-2">2</span> Part one: Representations of GCL and GCLe</h2>
+<div class="outline-text-2" id="text-Part one: Representations of GCL and GCLe">
+</div>
+
+<div id="outline-container-org17ff931" class="outline-3">
+<h3 id="Representation in Ruby"><span class="section-number-3">2.1</span> Representation in Ruby</h3>
+<div class="outline-text-3" id="text-Representation in Ruby">
+<p>
+There are three types <code>GCExpr</code>, <code>GCTest</code> and <code>GCStmt</code>, all can be defined in one line.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class GCExpr end
+class GCTest end
+class GCStmt end
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><code>GCExpr</code> has subclass <code>GCConst</code>, <code>GCVar</code> and <code>GCVar</code>.</li>
+<li><code>GCTest</code> has subclass <code>GCComp</code>, <code>GCAnd</code>, <code>GCOr</code>, <code>GCTrue</code> and <code>GCFalse</code>.</li>
+<li><code>GCStmt</code> has subclass <code>GCSkip</code>, <code>GCAssign</code>, <code>GCCompose</code>, <code>GCIf</code> and <code>GCDo</code>.</li>
+</ul>
+<p>
+Operator <code>&lt;</code> is used to inherit from superclass, for each class, we have an initialize method to initialize the object.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class GCConst &lt; GCExpr
+	attr_reader :i
+	def initialize(i)
+	  unless i.is_a?(Integer) 
+	    throw "The constructor needs to be an integer"
+	  end
+	  @i = i
+	end
+    end
+</pre>
+</div>
+
+<p>
+For <code>GCOp</code> and <code>GCComp</code>, the initialize value is restricted, which need to be checked.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class GCOp &lt; GCExpr
+	attr_reader :a1
+	attr_reader :a2
+	attr_reader :s
+	def initialize(a1,a2,s)
+	  unless a1.is_a?(GCExpr) &amp;&amp; a2.is_a?(GCExpr) &amp;&amp; s==:plus||:times||:minus||:div
+	    throw "The constructors' type do not match"
+	  end
+	  @a1 = a1
+	  @a2 = a2
+	  @s = s
+	end
+    end
+class GCComp &lt; GCTest
+      attr_reader :a1
+      attr_reader :a2
+      attr_reader :s
+      def initialize(a1,a2,s)
+	unless a1.is_a?(GCExpr) &amp;&amp; a2.is_a?(GCExpr) &amp;&amp; s==:eq||:less||:greater
+	  throw "The constructors' type do not match"
+	end
+	@a1 = a1
+	@a2 = a2
+	@s = s
+      end
+    end
+</pre>
+</div>
+
+<p>
+For <code>GCIf</code> and <code>GCDo</code>, their constructors take a list of <code>GCTest</code> and <code>GCStmt</code> pairs, which should also be checked.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class GCIf &lt; GCStmt
+    attr_reader :l
+    def initialize(l)
+      unless l.is_a?(Array) &amp;&amp; l.all? { |x| (x[0].is_a? GCTest) &amp;&amp; (x[1].is_a? GCStmt) }
+	throw "The constructors' type do not match"
+      end
+      @l = l
+    end
+  end
+</pre>
+</div>
+
+<p>
+For <code>GCLe</code>, as it includes <code>GCL</code>, the module could be defined as follow to avoid repeating.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">module GCLe 
+  include GCL
+  # class implementation
+end
+</pre>
+</div>
+
+<p>
+The implementation for classes is similar to the one in <code>GCL</code>, though <code>GCL</code> is included, when inheriting from classes in <code>GCL</code>, <code>::</code> is needed to reference it.
+An example could be as follow.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">class GCLocal &lt; GCL::GCStmt
+  attr_reader :a1
+  attr_reader :a2
+
+  def initialize(a1,a2)
+    unless a1.is_a?(Symbol) &amp;&amp; a2.is_a?(GCL::GCStmt)
+      throw "The constructors' type do not match"
+    end
+    @a1=a1
+    @a2=a2
+  end
+end
+</pre>
+</div>
+<p>
+When referencing <code>GCStmt</code>, since it is defined in <code>GCL</code>, <code>GCL::GCStmt</code> need to be used.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org28615f4" class="outline-3">
+<h3 id="Representation in Clojure"><span class="section-number-3">2.2</span> Representation in Clojure</h3>
+<div class="outline-text-3" id="text-Representation in Clojure">
+<p>
+In Clojure, records is used for each kind of expression, test and statement, 
+so there is no need to define the <code>GCExpr</code>, <code>GCTest</code> and <code>GCStmt</code> types.
+An example could be:
+</p>
+<div class="org-src-container">
+<pre class="src src-Ruby">(defrecord GCConst [int])
+(defrecord GCTrue [])
+(defrecord GCAssign [sym,a2])
+(defrecord GCIf [l])
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org7033116" class="outline-2">
+<h2 id="Part two: stack machine"><span class="section-number-2">3</span> Part two: Stack machine</h2>
+<div class="outline-text-2" id="text-Part two: stack machine">
+<p>
+The method stackEval carries out the evaluation of a <code>GCStmt</code> using a stack machine.
+</p>
+</div>
+
+<div id="outline-container-org9566750" class="outline-3">
+<h3 id="emptyState"><span class="section-number-3">3.1</span> emptyState</h3>
+<div class="outline-text-3" id="text-emptyState">
+<p>
+This method takes no arguments and returns a lambda for the empty memory state function
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def emptyState
+  lambda { |_| 0}
+end
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdad40c6" class="outline-3">
+<h3 id="updateState"><span class="section-number-3">3.2</span> updateState</h3>
+<div class="outline-text-3" id="text-updateState">
+<p>
+This method takes three arguments, a lambda for the previous memory state,
+a variable name, and an integer. 
+</p>
+
+<p>
+It returns a lambda which maps variable to integer, 
+and any other variable to the same value as the lambda sigma.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">def updateState(sigma, x, n)
+  lambda { |y| if y==x then n else sigma[x] end}
+end
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc742f07" class="outline-3">
+<h3 id="stackEval"><span class="section-number-3">3.3</span> stackEval</h3>
+<div class="outline-text-3" id="text-stackEval">
+<p>
+Here, command and result are two stacks, and memory is a block. The method return an updated state, which is the updated memory. 
+</p>
+
+<p>
+There is an overall until loop, which keep poping elements from command stack, and then we push corresponding values according to the classes of the elements to the result stack.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def stackEval(command, result, memory) 
+  until command.empty?
+      x = command.pop
+      case x
+	when GCConst then result.push(x.i)
+	when GCVar   then result.push(memory[x.s])
+      end
+  end
+  return memory
+end
+</pre>
+</div>
+
+<p>
+When the <code>x</code> is <code>GCOp</code>, <code>GCComp</code>, <code>GCAnd</code>, <code>GCOr</code> or <code>GCAssign</code>, we push a list with first element being a symbol(eg. name it by operation),
+and the second element being the symbol of x.
+</p>
+
+<p>
+Then we push the constructors of x to result stack.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby">when GCOp 
+  command.push([:operation, x.s])
+  command.push(x.a1)
+  command.push(x.a2)
+</pre>
+</div>
+
+<p>
+When the <code>x</code> is <code>GCTrue</code> or <code>GCFalse</code>, we push true or false to result stack directly.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">when GCTrue
+  result.push(true)
+when GCFalse
+  result.push(false)
+</pre>
+</div>
+
+<p>
+When the <code>x</code> is <code>GCDo</code> or <code>GCIf</code>, we push the size of the list of x, then we loop through each elements in list
+</p>
+
+<p>
+Since the list would only contain pairs, we push the second element first and then the first element, as the second
+element could protentially have sublist.  
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">when GCIf
+  command.push [:if, x.l.size]
+  x.l.each{ |pair|
+    command.push([:sublist, pair[1]])
+    command.push(pair[0])
+  }
+</pre>
+</div>
+
+<p>
+When <code>x</code> is an array, we check the first element of x.
+If the first element is <code>:operation</code>, <code>:composition</code>, <code>:and</code>, <code>:or</code>, 
+we pop the first two elements in result stack and perform corresponding operations according to second element in <code>x</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">when Array
+  case x[0]
+  when :operation,:composition,:and,:or
+    b, a = result.pop(2)
+    case x[1]
+    when :plus  then result.push(a+b)
+    when :eq    then result.push(a == b)
+    when :&amp;     then result.push(a &amp;&amp; b)
+    end
+</pre>
+</div>
+<p>
+When x[0] is <code>if</code>, we need to get the size of second element in the pair(i.e. the GCTest).
+</p>
+
+<p>
+Then, we pop same number of elements in result stack and reverse them into a list,
+and merge the list elements together by a each loop.
+</p>
+
+<p>
+After that, we push a random element to command stack, sample[1] is used to avoid pushing true/false value.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">when :if
+  size = x[1]
+  ifList = result.pop(size).reverse  
+  testList=Array.new  #GCTest
+  ifList.each do |n|
+    testList&lt;&lt;n
+  end
+  if !testList.empty?
+    command.push(testList.sample[1]) 
+  end
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga2d6e4f" class="outline-2">
+<h2 id="Part three: The small-step semantics of GCL in Clojure"><span class="section-number-2">4</span> Part three: The small-step semantics of GCL in Clojure</h2>
+<div class="outline-text-2" id="text-Part three: The small-step semantics of GCL in Clojure">
+<p>
+This method takes a GCL statement and a memory state and performs one step of the computation, 
+and it returns the remaining code to be run and the updated memory state.
+</p>
+</div>
+
+<div id="outline-container-orge5d86e1" class="outline-3">
+<h3 id="emptyState"><span class="section-number-3">4.1</span> emptyState</h3>
+<div class="outline-text-3" id="text-emptyState">
+<p>
+This method behaves equivalently to the methods of the same name in ruby.
+</p>
+
+<p>
+It takes no arguments and returns a lambda for the empty memory state function
+</p>
+<div class="org-src-container">
+<pre class="src src-clojure">(defn emptyState [] (fn [x] 0))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae9a128" class="outline-3">
+<h3 id="updateState"><span class="section-number-3">4.2</span> updateState</h3>
+<div class="outline-text-3" id="text-updateState">
+<p>
+This method behaves equivalently to the methods of the same name in ruby.
+</p>
+
+<p>
+It takes three arguments, a lambda for the previous memory state,
+a variable name, and an integer. 
+</p>
+
+<p>
+It returns a lambda which maps variable to integer, 
+and any other variable to the same value as the lambda sigma.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-clojure">(defn updateState [sigma x n] (fn [y] (if (= x y) n (sigma y))))
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org196b6f7" class="outline-3">
+<h3 id="reduce_helper"><span class="section-number-3">4.3</span> reduce<sub>helper</sub></h3>
+<div class="outline-text-3" id="text-reduce_helper">
+<p>
+This is a helper method that help evaluate <code>GCExpr</code> and <code>GCTest</code>, which is used in reduce method.
+</p>
+
+<p>
+The input is an expression and an empty state.
+We check the type of input and perform corresponding operations according to types.
+For example, when the type is <code>GCConst</code>, we return the constructor value .int;
+when the type is <code>GCVar</code>, we update the state with .sym;
+when the type is <code>GCOp</code>, <code>GCComp</code> and <code>GCAnd</code>, <code>GCOr</code>, we get the reduced value by recursion first and then return value after perform operations.
+</p>
+<div class="org-src-container">
+<pre class="src src-clojure">(defn reduce_helper[exp s]
+    (let [type (type exp)]
+	(cond ; similar to case in ruby 
+	    (= type GCConst)
+		(.int exp) ; access operator by .
+	    (= type GCVar)
+		(s (.sym exp))
+	    (= type GCOp)
+		(let [a1 (reduce_helper (.a1 exp) s) a2 (reduce_helper (.a2 exp) s) operator (.sym exp) ]
+		    (cond 
+			(= operator :plus)
+			    (+ a1 a2)
+			(= operator :minus)
+			    (- a1 a2)
+			(= operator :times)
+			    (* a1 a2)
+			(= operator :div)
+			    (/ a1 a2)
+		    )
+		)
+	)
+    )
+)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9ba036" class="outline-3">
+<h3 id="reduce"><span class="section-number-3">4.4</span> reduce</h3>
+<div class="outline-text-3" id="text-reduce">
+<p>
+This method takes a <code>Config</code> input and return a <code>Config</code>.
+</p>
+
+<p>
+Similar to reduce<sub>helper</sub>, we get the constructors of input <code>Config</code>, as well as the type of its <code>stmt</code>.
+</p>
+
+<p>
+Then we check the type. If the type is <code>GCSkip</code>, return same <code>Config</code>.
+</p>
+
+<p>
+If the type is <code>GCCompose</code>, we use recursion to find the reduced <code>Config</code> taking the <code>stmt1</code> of <code>GCCompose</code> and <code>state</code> as constructors. 
+The final stmt would be same as stmt2 only if the <code>stmt</code> constructor for config is <code>GCSkip</code>. Else it would be a composition of that stmt and the initial stmt2.
+</p>
+
+<p>
+If the type is <code>GCIf</code> or <code>GCDo</code>, we get a random element from the doList or ifList using <code>nth</code>, the <code>GCTest</code> would be the first element of the pair while the stmts would be the second.
+If <code>GCTest</code> is true, result <code>Config</code> 's <code>stmt</code> is the stmts we just got from the second element of the pairs. 
+</p>
+<div class="org-src-container">
+<pre class="src src-clojure">(defn reduce
+    [config]
+    ; assign values
+    (let [stmt (.stmt config) state (.sig config) type (type stmt)]
+	(cond
+	    (= type GCSkip) (Config. stmt state)
+	    (= type GCCompose)
+		(let [stmt1 (.a1 stmt) stmt2 (.a2 stmt)
+		      config2 (reduce (Config. stmt1 state))
+		      new_stmt (if (= (.stmt config2) (GCSkip.)) stmt2 (GCCompose. (.stmt config2) stmt2))
+		      new_state (.sig config2)]
+		    (Config. new_stmt new_state))
+	    (or (= type GCIf) (= type GCDo))
+		(let [ifList (.l stmt) length (count ifList) tests (nth (nth ifList (rand-int length)) 0) stmts (nth (nth ifList num) 1)
+		     new_stmt (if (reduce_helper tests state) stmts (GCSkip.))  
+		     new_state state]
+		    (Config. new_stmt new_state))
+	)
+    )
+)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8b53f4b" class="outline-2">
+<h2 id="Part four: The big-step semantics of GCLe in Ruby"><span class="section-number-2">5</span> Part four: The big-step semantics of GCLe in Ruby</h2>
+<div class="outline-text-2" id="text-Part four: The big-step semantics of GCLe in Ruby">
+<p>
+This method define the big-step semantics of the language.
+</p>
+</div>
+
+<div id="outline-container-org1b0090b" class="outline-3">
+<h3 id="wellScoped"><span class="section-number-3">5.1</span> wellScoped</h3>
+<div class="outline-text-3" id="text-wellScoped">
+<p>
+This method checks that all variables appearing in a <code>GCProgram</code> are within scope at the point of their use; that is, 
+either the variable is one declared to be global, or there is a local statement for that variable wrapping the use.
+</p>
+
+<p>
+It is similar to the <code>typeOf</code> method in assignment 2. It takes a <code>GCProgram</code> as its argument, and return a boolean. In this case, it is implemented in each class, with initialization in <code>GCProgram</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def wellScoped
+    variable=a1
+    return a2.wellScoped(variable) 
+</pre>
+</div>
+
+<p>
+For atomic expression like <code>GCTrue</code> and <code>GCConst</code>, they are wellScoped.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def wellScoped(variable); true end
+</pre>
+</div>
+
+<p>
+For composition expression that have two arguments like <code>GCOp</code> and <code>GCComp</code>, both arguments need to be checked.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def wellScoped(variable)
+  return a1.wellScoped(variable) &amp;&amp; a2.wellScoped(variable)
+end
+</pre>
+</div>
+
+<p>
+For class like <code>GCAssign</code> that have a symbol and a expression, we need to check if the variable includes symbol and recursion the argument with variable.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def wellScoped(variable)
+  return variable.include?(s) &amp;&amp; a.wellScoped(variable) 
+end
+</pre>
+</div>
+
+<p>
+For <code>GCIf</code> and <code>GCDo</code> that have a list of pairs as argument, we need to loop through each pair, if one of them is not wellScoped, it is not overall wellscoped.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def wellScoped(variable)
+  l.each { |pair|
+    gctest=pair[0]
+    gcstmt=pait[1]
+    if !(gctest.wellScoped(variable) &amp;&amp; gcstmt.wellScoped(variable))
+      return false
+    end
+  }
+  return true
+end
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org08a8a74" class="outline-3">
+<h3 id="eval"><span class="section-number-3">5.2</span> eval</h3>
+<div class="outline-text-3" id="text-eval">
+<p>
+This method takes a <code>GCStmt</code> as argument and returns a Hash mapping the global variable names to integers.
+</p>
+
+<p>
+This is how <code>eval</code> works. First we get a new state by the <code>stackEval</code> method defined aboved, then we loop through the global variable and map each variable with the corresponding integers.
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">def eval(program)
+  new_state =stackEval([program.a2],[],emptyState) 
+  result = Hash.new
+  program.a1.each { |var|
+      result[var] = new_state.call(var)
+  }
+  return result
+end
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Cynthia Liu</p>
+<p class="date">Created: 2020-12-22 Tue 04:01</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

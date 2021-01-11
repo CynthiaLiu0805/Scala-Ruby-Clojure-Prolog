@@ -1,0 +1,421 @@
+# Created 2021-01-09 Sat 21:45
+#+TITLE: 400172720   Liu, Cynthia                liuy363
+#+AUTHOR: Mark Armstrong
+* Totals
+
+- Completed assignment 2 early.
+
+|--------+-----+----+-----+----+----+----+----+----+----+----+----+----+-----+-------|
+| Work   |  A1 | A2 |  A3 | H1 | H2 | H3 | H4 | H5 | H6 | H7 | H8 | H9 | H10 | Total |
+|--------+-----+----+-----+----+----+----+----+----+----+----+----+----+-----+-------|
+| Mark   |  88 | 84 |     | 90 | 41 | 38 | 43 | 43 | 50 | 27 | 60 | 55 |  21 | 65.49 |
+|--------+-----+----+-----+----+----+----+----+----+----+----+----+----+-----+-------|
+| Out of | 100 | 90 | 100 | 80 | 45 | 40 | 40 | 35 | 40 | 30 | 60 | 60 |  45 |   100 |
+|--------+-----+----+-----+----+----+----+----+----+----+----+----+----+-----+-------|
+#+TBLFM: @2$15='(/ (round (* 100.0 (+ (* 0.2 @2$2) (* 25.0 (/ @2$3 90.0)) (* 0.3 @2$4) (* 2.5 (/ @2$5 80.0)) (* 2.5 (/ @2$6 45.0)) (* 2.5 (/ @2$7 40.0)) (* 2.5 (/ @2$8 40.0)) (* 2.5 (/ @2$9 35.0)) (* 2.5 (/ @2$10 40.0)) (* 2.5 (/ @2$11 30.0)) (* 2.5 (/ @2$12 60.0)) (* 2.5 (/ @2$13 60.0)) (* 2.5 (/ @2$14 45.0))))) 100.0);N
+
+* Assignment 3
+
+|  Part | Description/breakdown | Mark | Out of | Bonus | Comments |
+|-------+-----------------------+------+--------+-------+----------|
+|     1 | The representation    |      |        |       |          |
+|       | ├─ Ruby GCL           |      |      3 |       |          |
+|       | ├─ Clojure GCL        |      |      3 |       |          |
+|       | ├─ Ruby GCLe          |      |      2 |       |          |
+|       | └─ Documentation      |      |      2 |       |          |
+|     2 | Typechecking          |      |     20 |       |          |
+|       | └─ Documentation      |      |      5 |       |          |
+|     3 | Type erasure          |      |     20 |       |          |
+|       | └─ Documentation      |      |      5 |       |          |
+|     4 | Interpreting          |      |     32 |       |          |
+|       | └─ Documentation      |      |      8 |       |          |
+|     5 | GCLe in Clojure       |      |        |     8 |          |
+|       | └─ Documentation      |      |        |     2 |          |
+|-------+-----------------------+------+--------+-------+----------|
+| Total |                       |    0 |    100 |       |          |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)
+
+* Assignment 2
+
+|  Part | Description/breakdown | Mark | Out of | Bonus | Comments                       |
+|-------+-----------------------+------+--------+-------+--------------------------------|
+|     1 | The representation    |      |        |       |                                |
+|       | ├─ Scala              |    4 |      4 |       |                                |
+|       | ├─ Ruby               |    4 |      4 |       |                                |
+|       | └─ Documentation      |    2 |      2 |       |                                |
+|     2 | Typechecking          |      |        |       |                                |
+|       | ├─ Scala              |   16 |     16 |       |                                |
+|       | ├─ Ruby               |   16 |     16 |       |                                |
+|       | └─ Documentation      |    8 |      8 |       |                                |
+|     3 | Type erasure          |      |        |       |                                |
+|       | ├─ Scala              |   13 |     16 |       | An extra coverage test failed. |
+|       | ├─ Ruby               |   13 |     16 |       | Same.                          |
+|       | └─ Documentation      |    8 |      8 |       |                                |
+|     4 | Interpreting          |      |        |       |                                |
+|       | ├─ Scala              |      |        |     4 |                                |
+|       | ├─ Ruby               |      |        |     4 |                                |
+|       | └─ Documentation      |      |        |     2 |                                |
+|     5 | Pairs                 |      |        |       |                                |
+|       | ├─ Scala              |      |        |     4 |                                |
+|       | ├─ Ruby               |      |        |     4 |                                |
+|       | └─ Documentation      |      |        |     2 |                                |
+|-------+-----------------------+------+--------+-------+--------------------------------|
+| Total |                       |   84 |     90 |       |                                |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)
+
+* Assignment 1
+
+|  Part | Description/breakdown    | Mark | Out of | Bonus | Comments                                                                                                                                  |
+|-------+--------------------------+------+--------+-------+-------------------------------------------------------------------------------------------------------------------------------------------|
+|     1 | Interpreter in Scala     |      |        |       |                                                                                                                                           |
+|       | ├─ Representation        |    4 |      4 |       |                                                                                                                                           |
+|       | ├─ Interpreter           |   12 |     12 |       |                                                                                                                                           |
+|       | └─ Documentation         |    4 |      4 |       |                                                                                                                                           |
+|     2 | Interpreter in Prolog    |      |        |       |                                                                                                                                           |
+|       | ├─ Representation        |    4 |      4 |       |                                                                                                                                           |
+|       | ├─ Interpreter           |   12 |     12 |       |                                                                                                                                           |
+|       | └─ Documentation         |    4 |      4 |       |                                                                                                                                           |
+|     3 | Variables & substitution |      |        |       |                                                                                                                                           |
+|       | ├─ Scala                 |    6 |     12 |       | Test to substitute a bound variable failed. The handling of substitution looks /far/ overcomplicated. Why convert expressions to strings? |
+|       | ├─ Prolog                |   10 |     12 |       | Bound variable test also failed here.                                                                                                     |
+|       | └─ Documentation         |    6 |      6 |       |                                                                                                                                           |
+|     4 | Boolean expressions      |      |        |       |                                                                                                                                           |
+|       | ├─ Scala                 |    8 |     12 |       | Type clashes cause exceptions instead of returning None.                                                                                  |
+|       | ├─ Prolog                |   12 |     12 |       |                                                                                                                                           |
+|       | └─ Documentation         |    6 |      6 |       |                                                                                                                                           |
+|     5 | Parsing                  |      |        |     7 |                                                                                                                                           |
+|       | └─ Documentation         |      |        |     3 |                                                                                                                                           |
+|-------+--------------------------+------+--------+-------+-------------------------------------------------------------------------------------------------------------------------------------------|
+| Total |                          |   88 |    100 |       |                                                                                                                                           |
+#+TBLFM: @20$3=vsum(@2$3..@19$3)::@20$4=vsum(@2$4..@19$4)
+
+* Homework 10
+
+** Comments
+
+Scala design looks okay, but it has syntax errors.
+
+One Ruby test fails.
+
+The Clojure tests fail; you need to unwrap the futures.
+
+** The marks
+
+|  Part | Description | Mark | Out of | Bonus |
+|-------+-------------+------+--------+-------|
+|     1 | Clojure     |    7 |     15 |       |
+|     2 | Ruby        |    7 |     15 |       |
+|     3 | Scala       |    7 |     15 |       |
+|     4 | Prolog      |      |        |     5 |
+|-------+-------------+------+--------+-------|
+| Total |             |   21 |     45 |     5 |
+#+TBLFM: @6$3=vsum(@2$3..@5$3)::@6$4=vsum(@2$4..@5$4)::@6$5=vsum(@2$5..@5$5)
+
+* Homework 9
+** Comments
+- Why you did implementation of ~gcd~ with ~compare-x-y~ name? By using wrong
+  naming your implementation did not pass unit tests related to part4.
+** The marks
+
+|  Part | Description                                           | Mark | Out of | Bonus |
+|-------+-------------------------------------------------------+------+--------+-------|
+|     1 | Sequence of commands whose guards are satisfied       |   20 |     20 |       |
+|     2 | A nondeterministic if expression for guarded commands |   15 |     15 |       |
+|     3 | A nondeterministic do expression for guarded commands |   15 |     15 |       |
+|     4 | GCD                                                   |    5 |     10 |       |
+|     5 | GCD by iteration                                      |      |        |     5 |
+|-------+-------------------------------------------------------+------+--------+-------|
+| Total |                                                       |   55 |     60 |     5 |
+#+TBLFM: @7$3=vsum(@2$3..@6$3)::@7$4=vsum(@2$4..@6$4)::@7$5=vsum(@2$5..@6$5)
+* Homework 8
+** Comments
+- Great Job. 😀
+** The marks
+
+|  Part | Description        | Mark | Out of | Bonus |
+|-------+--------------------+------+--------+-------|
+|     1 | Exponent           |   10 |     10 |       |
+|     2 | Sum of a list      |   10 |     10 |       |
+|     3 | Flatten a list     |   20 |     20 |       |
+|     4 | Pstfixes of a list |   20 |     20 |       |
+|-------+--------------------+------+--------+-------|
+| Total |                    |   60 |     60 |     0 |
+#+TBLFM: @6$3=vsum(@2$3..@5$3)::@6$4=vsum(@2$4..@5$4)::@6$5=vsum(@2$5..@5$5)
+
+* Homework 7
+** Comments
+
+-You have just a tiny mistake changing the place of the variable names. Check
+the following implementations:
+
+#+begin_src scala
+def prettify(t: ULTerm): String = {x
+  def variableName(index: Int): String = {
+    val letter = (index % 26 + 97).toChar
+    val number = index / 26
+    if (number == 0)
+      letter.toString
+    else
+      letter.toString + number.toString
+  }
+
+ def prettifyHelper(t: ULTerm, currentBinders: Int): String = t match {
+    case ULVar(i) if i < currentBinders =>
+      // The indexing goes from the innermost binder to the outermost.
+      // So if i is 0, it refers to the (currentBinders - 1)'th bound variable.
+      //    If i is 1, it refers to the (currentBinders - 2)'th bound variable.
+      variableName(currentBinders - i - 1)
+    case ULVar(i) =>
+      // Indexing can go in increasing order for free variables.
+      variableName(i)
+    case ULAbs(t1) =>
+      val name = variableName(currentBinders)
+      val body = prettifyHelper(t1,currentBinders+1)
+      "lambda " + name +  " . " + body
+    case ULApp(t1,t2) =>
+      val t1_pretty = prettifyHelper(t1,currentBinders)
+      val t2_pretty = prettifyHelper(t2,currentBinders)
+      "(" + t1_pretty + ") (" + t2_pretty + ")"
+  }
+
+  prettifyHelper(t,0)
+}
+#+end_src
+
+#+begin_src ruby
+class ULTerm
+  def variableName(index)
+    # Choose the index'th character past lowercase a.
+    # If the index is more than 26, we'll also
+    # append a number, starting from 1 and counting up as needed.
+    letter = (index % 26 + 97).chr
+    number = index / 26  # for some reason, the slash breaks my fontification
+                         # until a matching one, so here: /
+                         # If my students are reading this, don't worry about it;
+                         # it's some sort of bug with my editor.
+    if number == 0
+      letter
+    else
+      letter + number.to_c
+    end
+  end
+  
+  def prettify
+    prettify_helper(0)
+  end
+end
+class ULVar < ULTerm
+  def prettify_helper(current_binders)
+    if @index < current_binders
+      variableName(current_binders - @index - 1)
+    else
+      variableName(@index)
+    end
+    
+    # This alternate implementation names all bound variables xn,
+    # where n is an integer
+    # and all free variables zn where n is an integer.
+    #if @index < current_binders
+    #  # This is a bound variable.
+    #  'x' + @index.to_s
+    #else
+    #  # This is a free variable.
+    #  'z' + (@index - current_binders).to_s
+    #end
+  end
+end
+
+class ULAbs < ULTerm
+  def prettify_helper(current_binders)
+    "lambda " + variableName(current_binders) + " . " + @t.prettify_helper(current_binders+1)
+    # This alternate code matches that in the ULVar method
+    # which gave all bound variables the name "x" 
+    #"lambda x" + current_binders.to_s + " . " + @t.prettify_helper(current_binders+1)
+  end
+end
+
+class ULApp < ULTerm
+  def prettify_helper(current_binders)
+    pretty1 = @t1.prettify_helper(current_binders)
+    pretty2 = @t2.prettify_helper(current_binders)
+    "(" + pretty1 + ") (" + pretty2 + ")" 
+  end
+end
+#+end_src
+
+** The marks
+
+| Part  | Description                          | Mark | Out of | Bonus |
+|-------+--------------------------------------+------+--------+-------|
+| 1     | The "pretty printer" prettify method |   27 |     30 |       |
+|-------+--------------------------------------+------+--------+-------|
+| Total |                                      |   27 |     30 |       |
+#+TBLFM: @3$3=vsum(@2$3..@2$3)::@3$4=vsum(@2$4..@2$4)
+
+* Homework 6
+
+** Comments
+
+- It looks good to me 😀
+
+** The marks
+
+|  Part | Description                              | Mark | Out of | Bonus |
+|-------+------------------------------------------+------+--------+-------|
+|     1 | A representation and interpreter in Ruby |   40 |     40 |       |
+|     2 | Add variables and substitution           |   10 |        |    10 |
+|-------+------------------------------------------+------+--------+-------|
+| Total |                                          |   50 |     40 |       |
+#+TBLFM: @4$3=vsum(@2$3..@3$3)::@4$4=vsum(@2$4..@3$4)
+
+* Homework 5
+
+** Comments
+
+- As it instructed we expect dedication in your implementation. However, you are
+  repeating the same implementation several times. Why not haveing a method such
+  as ~fizzbuzz~ with following implementation:
+
+#+begin_src ruby
+def fizzbuzz(n)
+  r = ""
+  r += "fizz" if n % 3 == 0
+  r += "buzz" if n % 5 == 0
+  r += n.to_s if r == ""
+  return r
+end
+#+end_src
+
+Then this helper function could be used in implementation of ~fizzbuzzLooper~,
+and ~fizzbuzzItertor~.
+
+** The marks
+
+|  Part | Description                       | Mark | Out of | Bonus |
+|-------+-----------------------------------+------+--------+-------|
+|     1 | Fizzbuzzing by loops              |    4 |      5 |       |
+|     2 | Fizzbuzzing by iterators          |    9 |     10 |       |
+|     3 | Generalised fizzbuzzing           |   20 |     20 |       |
+|     4 | Generalised fizzbuzzing in Scala  |   10 |        |    10 |
+|     5 | Generalised fizzbuzzing in Prolog |      |        |    10 |
+|-------+-----------------------------------+------+--------+-------|
+| Total |                                   |   43 |     35 |       |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)
+
+* Homework 4
+
+** Comments
+
+- Part1: You can simplify your ~Cons(a,f)~ case. Check the following
+  implementation:
+
+#+begin_src amm
+case Cons(a,f) => if (p(a)) Cons(a, _ => filter(p,f())) else filter(p,f())
+#+end_src
+
+- Part2: Check this ~merge~ implementation as well. It is much better compare to
+  yours:
+
+#+begin_src amm
+def merge[A](s: Stream[A], t: Stream[A]): Stream[A] = s match {
+  case SNil => t
+  case Cons(a,f) => Cons(a, _ => merge(t, f()))
+  }
+#+end_src
+
+- Part3 : Check these better implementations for ~all~ and ~exists~:
+
+#+begin_src amm
+def all[A](p: A => Boolean, s: Stream[A]): Boolean = s match {
+  case SNil => true
+  case Cons(a,f) => p(a) && all(p,f())
+  }
+#+end_src
+
+#+begin_src amm
+def exists[A](p: A => Boolean, s: Stream[A]): Boolean = s match {
+  case SNil => false
+  case Cons(a,f) => p(a) || exists(p,f())
+  }
+#+end_src
+
+Duplicating elements to form a pair in ~zipSafe~ is not
+what I consider the best approach.
+
+Notice that ~mergeSafe~'s pattern matching is missing a case.
+More importantly, it was intended to work
+for streams of differing types.
+
+** The marks
+
+|  Part | Description                             | Mark | Out of | Bonus |
+|-------+-----------------------------------------+------+--------+-------|
+|     1 | Filtering streams                       |   10 |     10 |       |
+|     2 | Zipping and merging streams             |   20 |     20 |       |
+|     3 | “Quantifying” over streams              |   10 |     10 |       |
+|     4 | Tolerant zipping and merging of streams |    3 |        |    10 |
+|-------+-----------------------------------------+------+--------+-------|
+| Total |                                         |   43 |     40 |       |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)
+
+* Homework 3
+** Comments
+
+- Part2 : ~2~ is the smallest prime number according to prime numbers
+  definition. Therefore, you need a base case for ~i<2~ which should return
+  false which is not included in your code. As the result your implementation
+  detect ~0~ and ~1~ as prime numbers.
+** The marks
+
+|  Part | Description                             | Mark | Out of | Bonus |
+|-------+-----------------------------------------+------+--------+-------|
+|     1 | Flattening and ordering trees in Prolog |   20 |     20 |       |
+|     2 | Predicates in Scala                     |   18 |     20 |       |
+|-------+-----------------------------------------+------+--------+-------|
+| Total |                                         |   38 |     40 |     0 |
+#+TBLFM: @4$3=vsum(@2$3..@3$3)::@4$4=vsum(@2$4..@3$4)::@4$5=vsum(@2$5..@3$5)
+* Homework 2
+
+** Comments
+
+- Part1: Having no base case for ~<2~ cause the following test time error:
+#+begin_src text
+received error: mod/2: Arithmetic: evaluation error: `zero_divisor'
+#+end_src
+- Part2: In ~isDigitList(X[L|[]])~ you should check if ~X>=0~. You didn't check if ~X~ belong to tens as well.
+
+** The marks
+
+|  Part | Description                   | Mark | Out of | Bonus |
+|-------+-------------------------------+------+--------+-------|
+|     1 | Prime checker                 |    3 |      5 |       |
+|     2 | From number to list of digits |   13 |     15 |       |
+|     3 | Palindrome                    |   10 |     10 |       |
+|     4 | Prime Palindrome              |   15 |     15 |       |
+|     5 | Efficiency                    |      |        |    10 |
+|-------+-------------------------------+------+--------+-------|
+| Total |                               |   41 |     45 |       |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)
+
+* Homework 1
+
+** Comments
+
+Note that there's no need for the case split in your ordering methods.
+You don't get anything by a single case split with a catchall pattern;
+it's like ~if (true) { ... }~.
+
+Your bonus solution discards all type information about the elements.
+
+** The marks
+
+|  Part | Description                    | Mark | Out of | Bonus |
+|-------+--------------------------------+------+--------+-------|
+|     1 | ~LeafTree~ and ~BinTree~ types |   20 |     20 |       |
+|     2 | Flattening                     |   20 |     20 |       |
+|     3 | Ordering                       |   20 |     20 |       |
+|     4 | ~StructTree~ type              |   20 |     20 |       |
+|     5 | Flattening ~StructTree~        |   10 |        |    20 |
+|-------+--------------------------------+------+--------+-------|
+| Total |                                |   90 |     80 |       |
+#+TBLFM: @>$3=vsum(@2$3..@>>$3)::@>$4=vsum(@2$4..@>>$4)

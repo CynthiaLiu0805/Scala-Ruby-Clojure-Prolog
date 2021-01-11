@@ -1,0 +1,86 @@
+% Created 2020-10-19 Mon 14:33
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{unicode-math}
+\usepackage{unicode}
+\usepackage{pdfpages}
+\author{Cynthia Liu}
+\date{\today}
+\title{Computer Science 3MI3 – 2020 Assignment 1: A language of expressions}
+\hypersetup{
+ pdfauthor={Cynthia Liu},
+ pdftitle={Computer Science 3MI3 – 2020 Assignment 1: A language of expressions},
+ pdfkeywords={},
+ pdfsubject={A demonstration of how to represent tree-like data in Prolog.},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Introduction}
+\label{sec:org85348d4}
+This is the documentation for Assignment 1 for COMPSCI3MI3 2020fall. 
+It is about an expression language consisting of integer constants and seven prefix operators, 
+like negation, absolute value, plus, times, minus, and exponent. 
+Also, base on that, implementing variables and substitution, as well as boolean expressions.
+This Assignment is written in both Scala and Prolog. 
+
+\section{Part one}
+\label{sec:org9eefec4}
+\subsection{Representation}
+\label{sec:orgf85ca15}
+The integer constants and operators are expressed in the new type \texttt{Expr}.
+\begin{itemize}
+\item The constructor Const take an \texttt{Int} as argument.
+\item The constructor Neg and Abs take an \texttt{Expr} as argument.
+\item The constructor Minus, Plus, Times and Exp take two \texttt{Expr} as arguments.
+\end{itemize}
+
+\includepdf[pages=-,width=\pagewidth]{./media/swipl_data_type_tree.pdf}
+
+\#+begin\textsubscript{src} amm
+sealed trait Expr
+case class Const[A](value:Int) extends Expr
+case class Neg[A](value:Expr) extends Expr
+case class Abs[A](value:Expr) extends Expr
+case class Minus[A](value1:Expr, value2:Expr) extends Expr
+case class Plus[A](Tvalue1:Expr, value2:Expr) extends Expr
+case class Times[A](value1:Expr, value2:Expr) extends Expr
+case class Exp[A](value1:Expr, value2:Expr) extends Expr
+
+
+\#+end\textsubscript{src} amm
+
+
+
+\subsection{Interpreter}
+\label{sec:orgbd4fccb}
+
+\section{Part two}
+\label{sec:orgac36088}
+hgfd$\backslash$
+
+\section{Part three}
+\label{sec:org24b35f2}
+gsdajg
+
+\section{Part four}
+\label{sec:orgc210413}
+bfdsd
+\end{document}

@@ -1,0 +1,444 @@
+#+Title: Computer Science 3MI3 – 2020 Assignment 3: A representation of Dijkstra's guarded command language
+#+Author: Cynthia Liu
+#+Description: Assignment 3 in Clojure and Ruby implementation
+
+* LaTeX settings                                                   :noexport:
+
+#+LaTeX_header: \usepackage{unicode-math}
+#+LaTeX_header: \usepackage{unicode}
+
+
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: Introduction
+:END:
+
+This is the documentation for Assignment 3 for COMPSCI3MI3 2020fall. 
+It is about representing Dijkstra's “guarded command language”, which we call GCL, 
+and a small extension to it, GCLe, which adds a notion of scope.
+
+This Assignment is written in both Clojure and Ruby, and it defines a stack machine in Ruby,
+ a The small-step semantics of GCL in Clojure, and a big-step semantics of GCLe in Ruby
+
+* Part one: Representations of GCL and GCLe
+:PROPERTIES:
+:CUSTOM_ID: Part one: Representations of GCL and GCLe
+:END:
+
+** Representation in Ruby
+:PROPERTIES:
+:CUSTOM_ID: Representation in Ruby
+:END:
+
+There are three types ~GCExpr~, ~GCTest~ and ~GCStmt~, all can be defined in one line.
+#+begin_src ruby
+class GCExpr end
+class GCTest end
+class GCStmt end
+#+end_src
+
+- ~GCExpr~ has subclass ~GCConst~, ~GCVar~ and ~GCVar~.
+- ~GCTest~ has subclass ~GCComp~, ~GCAnd~, ~GCOr~, ~GCTrue~ and ~GCFalse~.
+- ~GCStmt~ has subclass ~GCSkip~, ~GCAssign~, ~GCCompose~, ~GCIf~ and ~GCDo~.
+Operator ~<~ is used to inherit from superclass, for each class, we have an initialize method to initialize the object.
+#+begin_src ruby
+class GCConst < GCExpr
+        attr_reader :i
+        def initialize(i)
+          unless i.is_a?(Integer) 
+            throw "The constructor needs to be an integer"
+          end
+          @i = i
+        end
+    end
+#+end_src
+
+For ~GCOp~ and ~GCComp~, the initialize value is restricted, which need to be checked.
+#+begin_src ruby
+class GCOp < GCExpr
+        attr_reader :a1
+        attr_reader :a2
+        attr_reader :s
+        def initialize(a1,a2,s)
+          unless a1.is_a?(GCExpr) && a2.is_a?(GCExpr) && s==:plus||:times||:minus||:div
+            throw "The constructors' type do not match"
+          end
+          @a1 = a1
+          @a2 = a2
+          @s = s
+        end
+    end
+class GCComp < GCTest
+      attr_reader :a1
+      attr_reader :a2
+      attr_reader :s
+      def initialize(a1,a2,s)
+        unless a1.is_a?(GCExpr) && a2.is_a?(GCExpr) && s==:eq||:less||:greater
+          throw "The constructors' type do not match"
+        end
+        @a1 = a1
+        @a2 = a2
+        @s = s
+      end
+    end
+#+end_src
+
+For ~GCIf~ and ~GCDo~, their constructors take a list of ~GCTest~ and ~GCStmt~ pairs, which should also be checked.
+#+begin_src ruby
+class GCIf < GCStmt
+    attr_reader :l
+    def initialize(l)
+      unless l.is_a?(Array) && l.all? { |x| (x[0].is_a? GCTest) && (x[1].is_a? GCStmt) }
+        throw "The constructors' type do not match"
+      end
+      @l = l
+    end
+  end
+#+end_src
+
+For ~GCLe~, as it includes ~GCL~, the module could be defined as follow to avoid repeating.
+#+begin_src ruby
+module GCLe 
+  include GCL
+  # class implementation
+end
+#+end_src
+
+The implementation for classes is similar to the one in ~GCL~, though ~GCL~ is included, when inheriting from classes in ~GCL~, ~::~ is needed to reference it.
+An example could be as follow.
+#+begin_src ruby
+class GCLocal < GCL::GCStmt
+  attr_reader :a1
+  attr_reader :a2
+
+  def initialize(a1,a2)
+    unless a1.is_a?(Symbol) && a2.is_a?(GCL::GCStmt)
+      throw "The constructors' type do not match"
+    end
+    @a1=a1
+    @a2=a2
+  end
+end
+#+end_src
+When referencing ~GCStmt~, since it is defined in ~GCL~, ~GCL::GCStmt~ need to be used.
+
+
+** Representation in Clojure
+:PROPERTIES:                     
+:CUSTOM_ID: Representation in Clojure
+:END: 
+In Clojure, records is used for each kind of expression, test and statement, 
+so there is no need to define the ~GCExpr~, ~GCTest~ and ~GCStmt~ types.
+An example could be:
+#+begin_src Ruby
+(defrecord GCConst [int])
+(defrecord GCTrue [])
+(defrecord GCAssign [sym,a2])
+(defrecord GCIf [l])
+#+end_src
+
+
+* Part two: Stack machine
+:PROPERTIES:
+:CUSTOM_ID: Part two: stack machine
+:END:
+The method stackEval carries out the evaluation of a ~GCStmt~ using a stack machine.
+
+** emptyState
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: emptyState
+:END:
+This method takes no arguments and returns a lambda for the empty memory state function
+#+begin_src ruby          
+def emptyState
+  lambda { |_| 0}
+end
+#+end_src  
+
+** updateState
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: updateState
+:END:
+This method takes three arguments, a lambda for the previous memory state,
+a variable name, and an integer. 
+
+It returns a lambda which maps variable to integer, 
+and any other variable to the same value as the lambda sigma.
+
+#+begin_src ruby          
+def updateState(sigma, x, n)
+  lambda { |y| if y==x then n else sigma[x] end}
+end
+#+end_src 
+  
+** stackEval
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: stackEval
+:END:
+Here, command and result are two stacks, and memory is a block. The method return an updated state, which is the updated memory. 
+
+There is an overall until loop, which keep poping elements from command stack, and then we push corresponding values according to the classes of the elements to the result stack.
+#+begin_src ruby         
+def stackEval(command, result, memory) 
+  until command.empty?
+      x = command.pop
+      case x
+        when GCConst then result.push(x.i)
+        when GCVar   then result.push(memory[x.s])
+      end
+  end
+  return memory
+end
+#+end_src 
+
+When the ~x~ is ~GCOp~, ~GCComp~, ~GCAnd~, ~GCOr~ or ~GCAssign~, we push a list with first element being a symbol(eg. name it by operation),
+and the second element being the symbol of x.
+
+Then we push the constructors of x to result stack.
+
+#+begin_src ruby         
+when GCOp 
+  command.push([:operation, x.s])
+  command.push(x.a1)
+  command.push(x.a2)
+#+end_src 
+
+When the ~x~ is ~GCTrue~ or ~GCFalse~, we push true or false to result stack directly.
+#+begin_src ruby          
+when GCTrue
+  result.push(true)
+when GCFalse
+  result.push(false)
+#+end_src 
+
+When the ~x~ is ~GCDo~ or ~GCIf~, we push the size of the list of x, then we loop through each elements in list
+
+Since the list would only contain pairs, we push the second element first and then the first element, as the second
+element could protentially have sublist.  
+#+begin_src ruby          
+when GCIf
+  command.push [:if, x.l.size]
+  x.l.each{ |pair|
+    command.push([:sublist, pair[1]])
+    command.push(pair[0])
+  }
+#+end_src 
+
+When ~x~ is an array, we check the first element of x.
+If the first element is ~:operation~, ~:composition~, ~:and~, ~:or~, 
+we pop the first two elements in result stack and perform corresponding operations according to second element in ~x~.
+#+begin_src ruby          
+when Array
+  case x[0]
+  when :operation,:composition,:and,:or
+    b, a = result.pop(2)
+    case x[1]
+    when :plus  then result.push(a+b)
+    when :eq    then result.push(a == b)
+    when :&     then result.push(a && b)
+    end
+#+end_src 
+When x[0] is ~if~, we need to get the size of second element in the pair(i.e. the GCTest).
+
+Then, we pop same number of elements in result stack and reverse them into a list,
+and merge the list elements together by a each loop.
+
+After that, we push a random element to command stack, sample[1] is used to avoid pushing true/false value.
+#+begin_src ruby          
+when :if
+  size = x[1]
+  ifList = result.pop(size).reverse  
+  testList=Array.new  #GCTest
+  ifList.each do |n|
+    testList<<n
+  end
+  if !testList.empty?
+    command.push(testList.sample[1]) 
+  end
+#+end_src 
+
+
+* Part three: The small-step semantics of GCL in Clojure
+:PROPERTIES:
+:CUSTOM_ID: Part three: The small-step semantics of GCL in Clojure
+:END:
+This method takes a GCL statement and a memory state and performs one step of the computation, 
+and it returns the remaining code to be run and the updated memory state.
+
+** emptyState
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: emptyState
+:END:
+This method behaves equivalently to the methods of the same name in ruby.
+
+It takes no arguments and returns a lambda for the empty memory state function
+#+begin_src clojure         
+(defn emptyState [] (fn [x] 0))
+#+end_src  
+
+** updateState
+:PROPERTIES:                                                                                                                                      
+:CUSTOM_ID: updateState
+:END:
+This method behaves equivalently to the methods of the same name in ruby.
+
+It takes three arguments, a lambda for the previous memory state,
+a variable name, and an integer. 
+
+It returns a lambda which maps variable to integer, 
+and any other variable to the same value as the lambda sigma.
+
+#+begin_src clojure          
+(defn updateState [sigma x n] (fn [y] (if (= x y) n (sigma y))))
+#+end_src 
+
+
+** reduce helper
+:PROPERTIES:                    
+:CUSTOM_ID: reduce helper
+:END:
+
+This is a helper method that help evaluate ~GCExpr~ and ~GCTest~, which is used in reduce method.
+
+The input is an expression and an empty state.
+We check the type of input and perform corresponding operations according to types.
+For example, when the type is ~GCConst~, we return the constructor value .int;
+when the type is ~GCVar~, we update the state with .sym;
+when the type is ~GCOp~, ~GCComp~ and ~GCAnd~, ~GCOr~, we get the reduced value by recursion first and then return value after perform operations.
+#+begin_src clojure          
+(defn reduce_helper[exp s]
+    (let [type (type exp)]
+        (cond ; similar to case in ruby 
+            (= type GCConst)
+                (.int exp) ; access operator by .
+            (= type GCVar)
+                (s (.sym exp))
+            (= type GCOp)
+                (let [a1 (reduce_helper (.a1 exp) s) a2 (reduce_helper (.a2 exp) s) operator (.sym exp) ]
+                    (cond 
+                        (= operator :plus)
+                            (+ a1 a2)
+                        (= operator :minus)
+                            (- a1 a2)
+                        (= operator :times)
+                            (* a1 a2)
+                        (= operator :div)
+                            (/ a1 a2)
+                    )
+                )
+        )
+    )
+)
+#+end_src 
+
+** reduce
+:PROPERTIES:                    
+:CUSTOM_ID: reduce
+:END:
+
+This method takes a ~Config~ input and return a ~Config~.
+
+Similar to reduce_helper, we get the constructors of input ~Config~, as well as the type of its ~stmt~.
+
+Then we check the type. If the type is ~GCSkip~, return same ~Config~.
+
+If the type is ~GCCompose~, we use recursion to find the reduced ~Config~ taking the ~stmt1~ of ~GCCompose~ and ~state~ as constructors. 
+The final stmt would be same as stmt2 only if the ~stmt~ constructor for config is ~GCSkip~. Else it would be a composition of that stmt and the initial stmt2.
+
+If the type is ~GCIf~ or ~GCDo~, we get a random element from the doList or ifList using ~nth~, the ~GCTest~ would be the first element of the pair while the stmts would be the second.
+If ~GCTest~ is true, result ~Config~ 's ~stmt~ is the stmts we just got from the second element of the pairs. 
+#+begin_src clojure          
+(defn reduce
+    [config]
+    ; assign values
+    (let [stmt (.stmt config) state (.sig config) type (type stmt)]
+        (cond
+            (= type GCSkip) (Config. stmt state)
+            (= type GCCompose)
+                (let [stmt1 (.a1 stmt) stmt2 (.a2 stmt)
+                      config2 (reduce (Config. stmt1 state))
+                      new_stmt (if (= (.stmt config2) (GCSkip.)) stmt2 (GCCompose. (.stmt config2) stmt2))
+                      new_state (.sig config2)]
+                    (Config. new_stmt new_state))
+            (or (= type GCIf) (= type GCDo))
+                (let [ifList (.l stmt) length (count ifList) tests (nth (nth ifList (rand-int length)) 0) stmts (nth (nth ifList num) 1)
+                     new_stmt (if (reduce_helper tests state) stmts (GCSkip.))  
+                     new_state state]
+                    (Config. new_stmt new_state))
+        )
+    )
+)
+#+end_src 
+
+
+* Part four: The big-step semantics of GCLe in Ruby
+:PROPERTIES:
+:CUSTOM_ID: Part four: The big-step semantics of GCLe in Ruby
+:END:
+This method define the big-step semantics of the language.
+
+** wellScoped
+:PROPERTIES:                    
+:CUSTOM_ID: wellScoped
+:END:
+This method checks that all variables appearing in a ~GCProgram~ are within scope at the point of their use; that is, 
+either the variable is one declared to be global, or there is a local statement for that variable wrapping the use.
+
+It is similar to the ~typeOf~ method in assignment 2. It takes a ~GCProgram~ as its argument, and return a boolean. In this case, it is implemented in each class, with initialization in ~GCProgram~.
+#+begin_src ruby
+def wellScoped
+    variable=a1
+    return a2.wellScoped(variable) 
+#+end_src 
+
+For atomic expression like ~GCTrue~ and ~GCConst~, they are wellScoped.
+#+begin_src ruby
+def wellScoped(variable); true end
+#+end_src 
+
+For composition expression that have two arguments like ~GCOp~ and ~GCComp~, both arguments need to be checked.
+#+begin_src ruby
+def wellScoped(variable)
+  return a1.wellScoped(variable) && a2.wellScoped(variable)
+end
+#+end_src 
+
+For class like ~GCAssign~ that have a symbol and a expression, we need to check if the variable includes symbol and recursion the argument with variable.
+#+begin_src ruby
+def wellScoped(variable)
+  return variable.include?(s) && a.wellScoped(variable) 
+end
+#+end_src 
+
+For ~GCIf~ and ~GCDo~ that have a list of pairs as argument, we need to loop through each pair, if one of them is not wellScoped, it is not overall wellscoped.
+#+begin_src ruby
+def wellScoped(variable)
+  l.each { |pair|
+    gctest=pair[0]
+    gcstmt=pait[1]
+    if !(gctest.wellScoped(variable) && gcstmt.wellScoped(variable))
+      return false
+    end
+  }
+  return true
+end
+#+end_src 
+
+
+** eval
+:PROPERTIES:                    
+:CUSTOM_ID: eval
+:END:
+This method takes a ~GCStmt~ as argument and returns a Hash mapping the global variable names to integers.
+
+This is how ~eval~ works. First we get a new state by the ~stackEval~ method defined aboved, then we loop through the global variable and map each variable with the corresponding integers.
+#+begin_src ruby
+def eval(program)
+  new_state =stackEval([program.a2],[],emptyState) 
+  result = Hash.new
+  program.a1.each { |var|
+      result[var] = new_state.call(var)
+  }
+  return result
+end
+#+end_src 

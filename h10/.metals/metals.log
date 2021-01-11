@@ -1,0 +1,88 @@
+2020.12.09 17:02:57 INFO  started: Metals version 0.9.3+82-189ba64a-SNAPSHOT in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10' for client vscode.
+2020.12.09 17:02:59 INFO  time: initialize in 2.15s
+2020.12.09 17:03:00 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 17:03:03 INFO  no build target: using presentation compiler with only scala-library
+2020.12.09 17:03:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+something's wrong: no file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc in (Int, Int)RangePosition(file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc, 158, 158, 173)
+2020.12.09 18:15:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:16:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:18:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:18:54 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:19:04 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:19:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:19:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:19:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:09 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:16 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:19 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:20:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+Dec 09, 2020 6:20:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 335
+2020.12.09 18:20:56 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:08 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:12 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:23 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:24 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:38 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:21:49 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:22:05 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 18:59:43 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:21 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:22 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:25 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:31 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:01:31 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:01:31 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:01:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:01:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:15:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:15:28 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+something's wrong: no file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc in scala.concurrent.Future[Int]RangePosition(file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc, 591, 591, 602)
+something's wrong: no file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc in scala.concurrent.Future[Int]RangePosition(file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc, 689, 689, 700)
+2020.12.09 19:16:26 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:16:27 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:16:39 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:16:44 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:16:46 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:16:46 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:16:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:16:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:17:11 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:17:11 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:17:14 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:17:15 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:17:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:19:47 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:19:48 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:19:51 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:20:03 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:20:13 WARN  no build tool detected in workspace '/Users/liuyingxue/Documents/work/3MI3/liuy363/h10'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2020.12.09 19:20:15 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:35 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:37 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:41 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:42 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:47 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:50 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 19:30:55 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+something's wrong: no file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc in scala.concurrent.Future[(Int, Int)]RangePosition(file:///Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc, 608, 608, 626)
+Dec 09, 2020 10:42:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTraceNotification
+2020.12.09 22:43:07 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 22:45:18 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 22:45:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 22:45:20 WARN  no build target for: /Users/liuyingxue/Documents/work/3MI3/liuy363/h10/h10.sc
+2020.12.09 23:25:35 INFO  shutting down Metals
